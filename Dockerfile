@@ -5,7 +5,7 @@ ENV OPENBLAS_CORETYPE ARMV8
 RUN echo "export OPENBLAS_CORETYPE=ARMV8" >> /etc/profile
 
 # this is dumb but seems to be the only way to do this
-ADD payload/l4t_release_info /etc/nv_tegra_release
+ADD sysinfo/l4t_release_info /etc/nv_tegra_release
 
 # setup aptitutde
 RUN apt update
