@@ -50,3 +50,7 @@ ADD scripts/camera_test.py /root/camera_test.py
 
 # install ROS2
 RUN apt install -y lsb-release
+
+
+# install ZED2 colcon packages.
+
