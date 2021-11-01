@@ -53,4 +53,6 @@ RUN apt install -y lsb-release
 
 
 # install ZED2 colcon packages.
+RUN mkdir /root/ros2_ws
+RUN mdir /root/ros2_ws/src
 
