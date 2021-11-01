@@ -53,6 +53,6 @@ RUN apt install -y lsb-release
 
 
 # install ZED2 colcon packages.
-RUN mkdir /root/ros2_ws
-RUN mdir /root/ros2_ws/src
-
+ADD scripts/installColconPkgs.sh /root/installColconPkgs.sh
+RUN chmod +x /root/installColconPkgs.sh
+RUN cd /root/ && ./installColconPkgs.sh
