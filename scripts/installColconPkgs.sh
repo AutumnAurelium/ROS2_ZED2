@@ -1,3 +1,5 @@
+export ROS_DISTRO=foxy
+
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src/ #use your current ros2 workspace folder
 git clone https://github.com/stereolabs/zed-ros2-wrapper.git
