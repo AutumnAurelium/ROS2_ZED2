@@ -1,4 +1,6 @@
+#!/bin/bash
 export ROS_DISTRO=foxy
+export CMAKE_SYSTEM_NAME=focal # it's not but we have emulated the packages
 
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src/ #use your current ros2 workspace folder
