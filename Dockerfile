@@ -21,6 +21,9 @@ RUN cd /root/ && bash setup_dummy.sh
 # install ROS2 before ZED2 because ROS2 takes 45 minutes to build
 RUN apt install -y lsb-release
 
+# spoof Ubuntu version
+ADD payload/spoofed-lsb-release /etc/lsb-release
+
 ADD scripts/installROS2.sh /root/installROS2.sh
 #RUN cd /root && wget https://raw.githubusercontent.com/jetsonhacks/installROS2/master/installROS2.sh
 RUN chmod +x /root/installROS2.sh
@@ -51,9 +54,7 @@ ADD scripts/camera_test.py /root/camera_test.py
 # install ROS2
 RUN apt install -y lsb-release
 
-
 # install ZED2 colcon packages.
-ADD payload/spoofed-lsb-release /etc/lsb-release
 ADD scripts/installColconPkgs.sh /root/installColconPkgs.sh
 RUN chmod +x /root/installColconPkgs.sh
 RUN cd /root/ && ./installColconPkgs.sh
