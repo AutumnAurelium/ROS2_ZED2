@@ -21,8 +21,9 @@ RUN cd /root/ && bash setup_dummy.sh
 # install ROS2 before ZED2 because ROS2 takes 45 minutes to build
 RUN apt install -y lsb-release
 
-# spoof Ubuntu version
-ADD payload/spoofed-lsb-release /etc/lsb-release
+RUN apt update && apt upgrade
+RUN apt install -y update-manager-core
+RUN do-release-upgrade
 
 ADD scripts/installROS2.sh /root/installROS2.sh
 #RUN cd /root && wget https://raw.githubusercontent.com/jetsonhacks/installROS2/master/installROS2.sh
