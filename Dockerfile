@@ -21,7 +21,7 @@ RUN cd /root/ && bash setup_dummy.sh
 # install ROS2 before ZED2 because ROS2 takes 45 minutes to build
 RUN apt install -y lsb-release
 
-RUN apt update && apt upgrade
+RUN apt update && apt upgrade -y
 RUN apt install -y update-manager-core
 RUN yes | do-release-upgrade
 
