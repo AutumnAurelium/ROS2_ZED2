@@ -53,6 +53,7 @@ RUN apt install -y lsb-release
 
 
 # install ZED2 colcon packages.
+ADD payload/spoofed-lsb-release /etc/lsb-release
 ADD scripts/installColconPkgs.sh /root/installColconPkgs.sh
 RUN chmod +x /root/installColconPkgs.sh
-#RUN cd /root/ && ./installColconPkgs.sh
+RUN cd /root/ && ./installColconPkgs.sh
