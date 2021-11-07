@@ -23,7 +23,7 @@ RUN apt install -y lsb-release
 
 RUN apt update && apt upgrade
 RUN apt install -y update-manager-core
-RUN do-release-upgrade
+RUN yes | do-release-upgrade
 
 ADD scripts/installROS2.sh /root/installROS2.sh
 #RUN cd /root && wget https://raw.githubusercontent.com/jetsonhacks/installROS2/master/installROS2.sh
