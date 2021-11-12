@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM nvcr.io/nvidia/l4t-base:r32.6.1
+FROM l4t-focal:latest
 
 ENV OPENBLAS_CORETYPE ARMV8
 RUN echo "export OPENBLAS_CORETYPE=ARMV8" >> /etc/profile
@@ -20,10 +20,6 @@ RUN cd /root/ && bash setup_dummy.sh
 
 # install ROS2 before ZED2 because ROS2 takes 45 minutes to build
 RUN apt install -y lsb-release
-
-RUN apt update && apt upgrade -y
-RUN apt install -y update-manager-core
-RUN yes | do-release-upgrade
 
 ADD scripts/installROS2.sh /root/installROS2.sh
 #RUN cd /root && wget https://raw.githubusercontent.com/jetsonhacks/installROS2/master/installROS2.sh
